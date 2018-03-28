@@ -8,3 +8,13 @@ D:\HFU\Dateien\SoftwareDesign\Aufgaben\1\bin\Debug\netcoreapp2.0\1.dll
 D:\HFU\Dateien\SoftwareDesign\Aufgaben\1\bin\Debug\netcoreapp2.0\1.pdb
 D:\HFU\Dateien\SoftwareDesign\Aufgaben\1\obj\Debug\netcoreapp2.0\1.dll
 D:\HFU\Dateien\SoftwareDesign\Aufgaben\1\obj\Debug\netcoreapp2.0\1.pdb
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\1\obj\Debug\netcoreapp2.0\1.csproj.CoreCompileInputs.cache
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\1\obj\Debug\netcoreapp2.0\1.AssemblyInfoInputs.cache
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\1\obj\Debug\netcoreapp2.0\1.AssemblyInfo.cs
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\1\obj\Debug\netcoreapp2.0\1.dll
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\1\obj\Debug\netcoreapp2.0\1.pdb
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\1\bin\Debug\netcoreapp2.0\1.deps.json
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\1\bin\Debug\netcoreapp2.0\1.runtimeconfig.json
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\1\bin\Debug\netcoreapp2.0\1.runtimeconfig.dev.json
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\1\bin\Debug\netcoreapp2.0\1.dll
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\1\bin\Debug\netcoreapp2.0\1.pdb

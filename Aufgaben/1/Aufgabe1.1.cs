@@ -11,15 +11,15 @@ namespace Aufgabe1
             double d = Convert.ToDouble(args[1]);
             switch (name)
             {
-                case w:
+                case "w":
                 Console.WriteLine(getCubeInfo(d));
                 break;
 
-                case k:
+                case "k":
                 Console.WriteLine(getSphereInfo(d));
                 break;
 
-                case o:
+                case "o":
                 Console.WriteLine(getOctaInfo(d));
                 break;
             }
@@ -28,39 +28,45 @@ namespace Aufgabe1
 
         static public double getCubeSurface(double d)
         {
-            return double A = 6 * (d * d);
+            double A = Math.Round(6 * (d * d), 2);
+            return A;
         }
 
         static public double getCubeVolume(double d)
         {
-            return double V = d * d * d;
+            double V = Math.Round(d * d * d, 2);
+            return V;
         }
         static public string getCubeInfo(double d)
         {
-            return string end = "Würfel:   " + "A= " + getCubeSurface(d) + " | " + "V= " + getCubeVolume(d);
+            string end = "Würfel:   " + "A= " + getCubeSurface(d) + " | " + "V= " + getCubeVolume(d);
+            return end;
         }
 
         public static double getSphereSurface(double d)
         {
-           return double A = Math.PI * (d * d);
+           double A = Math.Round(Math.PI * (d * d), 2);
+           return A;
 
         }
         public static double getSphereVolume(double d)
         {
-            return double V = (Math.PI * (d * d * d)) / 6;
+            double V = Math.Round((Math.PI * (d * d * d) / 6), 2);
+            return V;
         }
         public static string getSphereInfo(double d)
         {
-            return string end = "Kugel:   " + "A= " + getOctaSurface(d) + " | " + "V= " + getCubeVolume(d);
+            string end = "Kugel:   " + "A= " + getOctaSurface(d) + " | " + "V= " + getCubeVolume(d);
+            return end;
         }
         public static double getOctaSurface(double d)
         {
-            double A = 2 * (Math.Sqrt(3) * (d * d));
+            double A = Math.Round(2 * (Math.Sqrt(3) * (d * d)), 2);
             return A;
         }
         public static double getOctaVolume(double d)
         {
-            double V = (Math.Sqrt(2) * (d * d * d)) / 3;
+            double V = Math.Round((Math.Sqrt(2) * (d * d * d)) / 3, 2);
             return V;
         }
         public static string getOctaInfo(double d)
