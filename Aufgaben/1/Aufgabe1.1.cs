@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _1
+namespace Aufgabe1
 {
     class Program
     {
