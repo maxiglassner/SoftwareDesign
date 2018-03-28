@@ -9,60 +9,64 @@ namespace Aufgabe1
         {
             string name = args[0];
             double d = Convert.ToDouble(args[1]);
-            if (name == "w")
+            switch (name)
             {
+                case w:
                 Console.WriteLine(getCubeInfo(d));
+                break;
+
+                case k:
+                Console.WriteLine(getSphereInfo(d));
+                break;
+
+                case o:
+                Console.WriteLine(getOctaInfo(d));
+                break;
             }
-            if (name == "k")
-            {
-                getSphereSurface(d);
-                getSphereVolume(d);
-                getSphereInfo(d);
-            }
-            if (name == "o")
-                Console.WriteLine();
+          
         }
 
         static public double getCubeSurface(double d)
         {
-            double A = 6 * (d * d);
-            return A;
+            return double A = 6 * (d * d);
         }
 
         static public double getCubeVolume(double d)
         {
-            double V = d * d * d;
-            return V;
+            return double V = d * d * d;
         }
         static public string getCubeInfo(double d)
         {
-            string end = "Würfel:   " + "A= " + getCubeSurface(d) + " | " + "V= " + getCubeVolume(d);
-            return end;
+            return string end = "Würfel:   " + "A= " + getCubeSurface(d) + " | " + "V= " + getCubeVolume(d);
         }
 
-        public static void getSphereSurface()
+        public static double getSphereSurface(double d)
         {
-            A = Math.PI * (d * d);
+           return double A = Math.PI * (d * d);
+
         }
-        public static void getSphereVolume()
+        public static double getSphereVolume(double d)
         {
-            V = (Math.PI * (d * d * d)) / 6;
+            return double V = (Math.PI * (d * d * d)) / 6;
         }
-        public static void getSphereInfo()
+        public static string getSphereInfo(double d)
         {
-            end = "Kugel:   " + "A= " + A + " | " + "V= " + V;
+            return string end = "Kugel:   " + "A= " + getOctaSurface(d) + " | " + "V= " + getCubeVolume(d);
         }
-        public static void getOctaSurface()
+        public static double getOctaSurface(double d)
         {
-            A = 2 * (Math.Sqrt(3) * (d * d));
+            double A = 2 * (Math.Sqrt(3) * (d * d));
+            return A;
         }
-        public static void getOctaVolume()
+        public static double getOctaVolume(double d)
         {
-            V = (Math.Sqrt(2) * (d * d * d)) / 3;
+            double V = (Math.Sqrt(2) * (d * d * d)) / 3;
+            return V;
         }
-        public static void getOctaInfo()
+        public static string getOctaInfo(double d)
         {
-            end = "Oktaeder:   " + "A= " + A + " | " + "V= " + V;
+            string end = "Oktaeder:   " + "A= " + getOctaSurface(d) + " | " + "V= " + getOctaVolume(d);
+            return end;
         }
     }
 }
