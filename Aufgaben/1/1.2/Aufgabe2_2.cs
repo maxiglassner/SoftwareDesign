@@ -25,7 +25,7 @@ namespace Aufgabe2_2
             string end = "";
 
             Random random = new Random();
-            int zahlend = random.Next(0, 6);
+            int zahlend;
 
             Boolean usedsub = true;
             Boolean usedver = true;
@@ -33,29 +33,45 @@ namespace Aufgabe2_2
 
             while (usedsub)
             {
+                zahlend = random.Next(0, 6);
+
                 if (subjects[zahlend] != "used")
                 {
                     end = subjects[zahlend] + " ";
                     subjects[zahlend] = "used";
                     usedsub = false;
                 }
+                else
+                {
+                    zahlend = random.Next(0, 6);
+                }
             }
             while (usedver)
             {
+                zahlend = random.Next(0, 6);
                 if (verbs[zahlend] != "used")
                 {
                     end += verbs[zahlend] + " ";
                     verbs[zahlend] = "used";
                     usedver = false;
                 }
+                else
+                {
+                    zahlend = random.Next(0, 6);
+                }
             }
             while (usedobj)
             {
+                zahlend = random.Next(0, 6);
                 if (objects[zahlend] != "used")
                 {
                     end += objects[zahlend] + ".";
                     objects[zahlend] = "used";
                     usedobj = false;
+                }
+                else
+                {
+                    zahlend = random.Next(0, 6);
                 }
             }
             return end;
