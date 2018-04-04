@@ -9,14 +9,14 @@ namespace Aufgabe2_2
        public static string[] objects = { "Zaubertränke", "den Grimm", "Lupin", "Hogwards", "die Karte des Rumtreibers", "Dementoren" };
         static void Main(string[] args)
         {
-            string[] safe = new string[6];       
+            string[] safe = new string[subjects.length];       
             
-            for (int i = 0; i <= 5; i++)
+            for (int i = 0; i <= subjects.length-1; i++)
             {
                 safe[i] = GetVerse();
             }
 
-            for (int i = 0; i <= 5; i++)
+            for (int i = 0; i <= subjects.length-1; i++)
             {
                 Console.WriteLine(safe[i]);
             }
@@ -34,7 +34,7 @@ namespace Aufgabe2_2
 
             while (usedsub)
             {
-                zahlend = random.Next(0, 6);
+                zahlend = random.Next(0, subjects.length);
 
                 if (subjects[zahlend] != "used")
                 {
@@ -44,12 +44,12 @@ namespace Aufgabe2_2
                 }
                 else
                 {
-                    zahlend = random.Next(0, 6);
+                    zahlend = random.Next(0, subjects.length);
                 }
             }
             while (usedver)
             {
-                zahlend = random.Next(0, 6);
+                zahlend = random.Next(0, subjects.length);
                 if (verbs[zahlend] != "used")
                 {
                     end += verbs[zahlend] + " ";
@@ -58,12 +58,12 @@ namespace Aufgabe2_2
                 }
                 else
                 {
-                    zahlend = random.Next(0, 6);
+                    zahlend = random.Next(0, subjects.length);
                 }
             }
             while (usedobj)
             {
-                zahlend = random.Next(0, 6);
+                zahlend = random.Next(0, subjects.length);
                 if (objects[zahlend] != "used")
                 {
                     end += objects[zahlend] + ".";
@@ -72,7 +72,7 @@ namespace Aufgabe2_2
                 }
                 else
                 {
-                    zahlend = random.Next(0, 6);
+                    zahlend = random.Next(0, subjects.length);
                 }
             }
             return end;
