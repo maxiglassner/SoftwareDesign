@@ -7,6 +7,7 @@ namespace Aufgabe2_2
        public static string[] subjects = { "Harry", "Hermine", "Ron", "Hagrid", "Snape", "Dumbledore" };
        public static string[] verbs = { "braut", "liebt", "studiert", "hasst", "zaubert", "zerstört" };
        public static string[] objects = { "Zaubertränke", "den Grimm", "Lupin", "Hogwards", "die Karte des Rumtreibers", "Dementoren" };
+       
         static void Main(string[] args)
         {
             string[] safe = new string[subjects.length];       
