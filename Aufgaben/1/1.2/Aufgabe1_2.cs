@@ -9,7 +9,8 @@ namespace Aufgabe2_2
        public static string[] objects = { "Zaubertränke", "den Grimm", "Lupin", "Hogwards", "die Karte des Rumtreibers", "Dementoren" };
         static void Main(string[] args)
         {
-            string[] safe = new string[6];
+            string[] safe = new string[6];       
+            
             for (int i = 0; i <= 5; i++)
             {
                 safe[i] = GetVerse();
