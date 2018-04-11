@@ -1,0 +1,11 @@
+D:\HFU\Dateien\SoftwareDesign\Aufgaben\2\bin\Debug\netcoreapp2.0\Debugging.deps.json
+D:\HFU\Dateien\SoftwareDesign\Aufgaben\2\bin\Debug\netcoreapp2.0\Debugging.runtimeconfig.json
+D:\HFU\Dateien\SoftwareDesign\Aufgaben\2\bin\Debug\netcoreapp2.0\Debugging.runtimeconfig.dev.json
+D:\HFU\Dateien\SoftwareDesign\Aufgaben\2\bin\Debug\netcoreapp2.0\Debugging.dll
+D:\HFU\Dateien\SoftwareDesign\Aufgaben\2\bin\Debug\netcoreapp2.0\Debugging.pdb
+D:\HFU\Dateien\SoftwareDesign\Aufgaben\2\obj\Debug\netcoreapp2.0\Debugging.csprojResolveAssemblyReference.cache
+D:\HFU\Dateien\SoftwareDesign\Aufgaben\2\obj\Debug\netcoreapp2.0\Debugging.csproj.CoreCompileInputs.cache
+D:\HFU\Dateien\SoftwareDesign\Aufgaben\2\obj\Debug\netcoreapp2.0\Debugging.AssemblyInfoInputs.cache
+D:\HFU\Dateien\SoftwareDesign\Aufgaben\2\obj\Debug\netcoreapp2.0\Debugging.AssemblyInfo.cs
+D:\HFU\Dateien\SoftwareDesign\Aufgaben\2\obj\Debug\netcoreapp2.0\Debugging.dll
+D:\HFU\Dateien\SoftwareDesign\Aufgaben\2\obj\Debug\netcoreapp2.0\Debugging.pdb
