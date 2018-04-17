@@ -1,7 +1,6 @@
 # Debugging - Protokoll
 
 >Betrachtet die Source-Code-Dateien FamilyTree.cs und Program.cs. In Familytree wird eine Datenstruktur aufgebaut, die eine Art Familienstammbaum repräsentiert (Ähnlichkeiten mit realen Personen sind rein zufällig :-)).
-
 >Macht euch klar, dass die Datenstruktur Person rekursiv ist, denn jedes Objekt vom Typ Person referenziert zwei weitere Objekte vom Typ Person, nämlich Mom und Dad.
 
 Das stimmt! In der Klasse Person werden zwei statische Variablen Mom und Dad vom Typ Person deklariert.
