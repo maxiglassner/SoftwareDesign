@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace Aufgabe_4
+namespace Aufgabe_5
 {
     class Program
     {
@@ -42,6 +43,12 @@ namespace Aufgabe_4
             public int _numberOfChildNodes = 0;
             public G _nodeContent;
 
+            public List<TreeNode<G>> returnList = new List<TreeNode<G>>();
+
+            public List<TreeNode<G>> Find(G contentToFind)
+            {
+                return returnList;
+            }
             public void AppendChild(TreeNode<G> node)
             {
                 if (_numberOfChildNodes == 0)
@@ -104,5 +111,4 @@ namespace Aufgabe_4
             }
         }
     }
-    
 }
