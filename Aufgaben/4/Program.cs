@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace Aufgabe_4
+namespace Aufgabe_5
 {
     class Program
     {
@@ -23,78 +24,46 @@ namespace Aufgabe_4
             child1.RemoveChild(grand12);
 
             root.PrintTree();
+
+            List<TreeNode<String>> resultList = root.Find("child1", new List<TreeNode<String>>());
         }
 
         public class Tree<G>
         {
             public TreeNode<G> CreateNode(G content)
             {
-                TreeNode<G> node = new TreeNode<G>();
-                node._nodeContent = content;
-                return node;
+                return new TreeNode<G>(content);
             }
         }
 
         public class TreeNode<G>
         {
-            public TreeNode<G> _parentNode;
-            public TreeNode<G>[] _childNodes;
-            public int _numberOfChildNodes = 0;
             public G _nodeContent;
+            public TreeNode<G> _parentNode;
+            public List<TreeNode<G>> _childNodes;
 
-            public void AppendChild(TreeNode<G> node)
+            public TreeNode(G content)
             {
-                if (_numberOfChildNodes == 0)
-                {
-                    _childNodes = new TreeNode<G>[] { node };
-                }
-                else
-                {
-                    TreeNode<G>[] childNodesOld = _childNodes;
-                    _childNodes = new TreeNode<G>[_numberOfChildNodes+1];
-                    Array.Copy(childNodesOld, _childNodes, _numberOfChildNodes);
-                    _childNodes[_numberOfChildNodes] = node;
-                }
-
-                _numberOfChildNodes++;
-                node._parentNode = this;
+                _nodeContent = content;
+                _childNodes = new List<TreeNode<G>>();
             }
 
-            public void RemoveChild(TreeNode<G> node)
+            public void AppendChild(TreeNode<G> nodeToAdd)
             {
-                if (_numberOfChildNodes == 0)
-                {
-                    Console.WriteLine(node._nodeContent + ": This TreeNode doesn't have any childNodes");
-                }
-                else
-                {
-                    Boolean found = false;
-                    for (int i = 0; i < _childNodes.Length - 1; i++)
-                    {
-                        if (_childNodes[i].Equals(node))
-                        {
-                            found = true;
-                        }
+                _childNodes.Add(nodeToAdd);
+                nodeToAdd._parentNode = this;
+            }
 
-                        if (found)
-                        {
-                            _childNodes[i] = _childNodes[i+1];
-                        }
-                    }
-
-                    _numberOfChildNodes--;
-
-                    TreeNode<G>[] childNodesOld = _childNodes;
-                    _childNodes = new TreeNode<G>[_numberOfChildNodes];
-                    Array.Copy(childNodesOld, _childNodes, _numberOfChildNodes);
-                }
+            public void RemoveChild(TreeNode<G> nodeToRemove)
+            {
+                _childNodes.Remove(nodeToRemove);
             }
 
             public void PrintTree(String levelBuffer = "")
             {
                 Console.WriteLine(levelBuffer + _nodeContent.ToString());
 
-                if (_numberOfChildNodes > 0)
+                if (_childNodes.Count > 0)
                 {
                     foreach(var node in _childNodes)
                     {
@@ -102,7 +71,23 @@ namespace Aufgabe_4
                     }
                 }
             }
+            public List<TreeNode<G>> Find(G contentToFind, List<TreeNode<G>> listToReturn)
+            {
+                if (_nodeContent.Equals(contentToFind))
+                {
+                    listToReturn.Add(this);
+                }
+
+                if (_childNodes.Count > 0)
+                {
+                    foreach (var node in _childNodes)
+                    {
+                        node.Find(contentToFind, listToReturn);
+                    }
+                }
+            
+                return listToReturn;
+            }
         }
     }
-    
 }
