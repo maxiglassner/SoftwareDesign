@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace Aufgabe_5
 {
-    class Program
+     class Program
     {
         static void Main(string[] args)
         {
             var tree = new Tree<String>();
             var root = tree.CreateNode("root");
             var child1 = tree.CreateNode("child1");
-            var child2 = tree.CreateNode("child1");
+            var child2 = tree.CreateNode("child2");
             root.AppendChild(child1);
             root.AppendChild(child2);
             var grand11 = tree.CreateNode("grand11");
