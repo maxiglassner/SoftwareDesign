@@ -26,8 +26,13 @@ namespace Aufgabe_5
             root.PrintTree();
 
             List<TreeNode<String>> resultList = root.Find("child1", new List<TreeNode<String>>());
+            
+            foreach (var element in resultList)
+            {
+                Console.WriteLine(element._nodeContent.ToString());
+            }
+        
         }
-
         public class Tree<G>
         {
             public TreeNode<G> CreateNode(G content)
