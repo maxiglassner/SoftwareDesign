@@ -1,0 +1,4 @@
+D:\HFU\Dateien\SoftwareDesign\Aufgaben\6\obj\Debug\netcoreapp2.0\6.csprojResolveAssemblyReference.cache
+D:\HFU\Dateien\SoftwareDesign\Aufgaben\6\obj\Debug\netcoreapp2.0\6.csproj.CoreCompileInputs.cache
+D:\HFU\Dateien\SoftwareDesign\Aufgaben\6\obj\Debug\netcoreapp2.0\6.AssemblyInfoInputs.cache
+D:\HFU\Dateien\SoftwareDesign\Aufgaben\6\obj\Debug\netcoreapp2.0\6.AssemblyInfo.cs
