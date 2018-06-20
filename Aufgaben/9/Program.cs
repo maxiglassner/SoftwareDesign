@@ -10,29 +10,33 @@ namespace _9
         public static string turn = "O"; 
         static void Main(string[] args)
         {
-            StartGame();           
+            StartGame(); 
+            WriteGameData();
+            RunGame();
         }
         public static void StartGame()
         {
             Console.WriteLine("Welcome to XOX! To set your mark, please just write the number of the field in the console. Player O will start. Please choose your field.");
             WriteGameData(); 
-            RunningGame();
+           // RunningGame();
         }
         public static void RunningGame ()
         {
+            Alternative: while(true)
             for(;;)
             {
                 //Player Input
-                string PlayerInput =  Console.ReadLine();
-                int Choosenfield = CorrectInput(PlayerInput);
+                string PlayerInput =  Console.ReadLine(); playerInput
+                int Choosenfield = CorrectInput(PlayerInput); chosenField
                
-                if (Choosenfield <= 9)   
+                if (Choosenfield <= 9)   wenn -1 zurück kommen kann: (chosenField > 0 && chosenField < 9)
                 {
 
                     //Set Mark
+                    Codedopplung!!!
                     if (counter%2 == 0)
                     {
-                        GameData[Choosenfield-1] = "O";
+                        GameData[Choosenfield-1] = "O";  = turn
                         counter++;
                         turn = "O";
                     } else
@@ -51,14 +55,15 @@ namespace _9
                     }
 
                     //Check for a winner
+                    WriteGameData() kann hierhin
                     if(win())
                     {
-                        WriteGameData();
+                        //WriteGameData();
                         Console.WriteLine("Winner Winner Chicken Dinner! Congratulations Player " + turn + ", you are the best!");
                         break;
                     } else
                     {
-                        WriteGameData();
+                        WriteGameData(); raus
                     }
                 }    
 
@@ -67,11 +72,14 @@ namespace _9
 
         public static int CorrectInput(string PlayerInput)
         {
-            int Choosenfield = 0;
+            int Choosenfield = 0;  chosenField <- camelCase
+            
+            Warum hier Einrückung?
+                Was passiert wenn Eingabe negativ?
                 if(Int32.TryParse(PlayerInput,out Choosenfield) == false)
                 {
                     Console.WriteLine("Invalid Iput! Please try it again.");
-                    return 10;
+                    return 10; eher unschön, besser -1
                 }
                 
                 if(GameData[Choosenfield-1] != PlayerInput)
@@ -85,7 +93,7 @@ namespace _9
 
         }
 
-        public static Boolean win()
+        public static Boolean win() siehe Aktivitätsdiagramm aus Praktikum
         {
             if (GameData[0]==GameData[1] & GameData[1] ==GameData[2])
             {
