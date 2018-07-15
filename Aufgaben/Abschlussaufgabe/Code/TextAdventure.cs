@@ -227,7 +227,8 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             GetNPCByName("Uruk-hai").DialogLines.Add(new CharDialogLine("Dann versuch es doch, solange du noch kannst.", 2, null));
 
             GetNPCByName("Schmied").DialogLines.Add(new CharDialogLine("Endlich ein Lebender der kein Ork ist! Hast du den Uruk in der Eingangshalle getötet?", 0, null));
-            GetNPCByName("Schmied").DialogLines.Add(new CharDialogLine("Beweis es wenn du mir sein Horn bringst bekommst etwas von mir!", 1, null));
+            GetNPCByName("Schmied").DialogLines.Add(new CharDialogLine("Vielen Dank! Hier das ist für dich.", 1, GetItemByName("Großer Heiltrank")));
+            GetNPCByName("Schmied").DialogLines.Add(new CharDialogLine("Schade. Wenn du das machst, bekommst etwas von mir", 2, GetItemByName("Großer Heiltrank")));
 
 
 
