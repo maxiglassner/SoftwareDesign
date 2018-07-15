@@ -13,6 +13,89 @@ namespace TextAdeventure_Die_Minen_von_Gloria
       public static Room WinningRoom;        
         static void Main(string[] args)
         {
+             {
+            LoadGameData();
+            Console.WriteLine(Environment.NewLine + "Herzlich Willkommen bei den Geheimnissen der Minen von Gloria!" + Environment.NewLine);
+            Console.WriteLine("Du hast dich durch tiefe Täler bis hin zum höchtsen Gipfel durchgeschlagen. Du bist müde und ausgelaugt und weißt nicht wohin mit dir.");
+            Console.WriteLine("Du machst halt an einem See. Mittlerweile ist es dunkel geworden und der Mond schiebt sich hinter den Wolken hervor.");
+            Console.WriteLine("Doch was ist das. Die Fehlswand an der du dich bis eben gelehnt hast, erstrahlt im Schein den Mondes und eine Tür zeichnet sich hab.");
+            Console.WriteLine("Das muss Mithril sein. Es wird nur im Mond- und Sternenlicht sichtbar. Es ist der sagenumwobene Eingang zu den Minen von Gloria...");
+
+            while(true)
+            {
+                if(Player.CurrentRoom == WinningRoom)
+                {
+                    Console.WriteLine("Du hast es geschafft du bist beim " + WinningRoom.Name + " angekommen. Herzlichen Glückwunsch! Um weitere Abendteuer zu erleben hol dir unsere DLCs. Bis zum nächsten Mal.");
+                    IsFinished = true;
+                }
+
+                if (IsFinished == true)
+                {
+                    Console.WriteLine("Vielen Dank fürs mitspielen!");
+                    break;
+                }
+
+                
+
+                Console.WriteLine("Um Hilfe zu erhalten, gebe einfach ein 'h' ein" + Environment.NewLine);
+
+                string input = Console.ReadLine().ToLower();
+
+                string command = input.IndexOf(" ") > -1 
+                  ? input.Substring(0, input.IndexOf(" "))
+                  : input;
+
+                string parameter = input.IndexOf(" ") > -1 
+                  ? input.Substring(input.IndexOf(" ") + 1, input.Length - (input.IndexOf(" ") + 1))
+                  : "";
+                
+                switch(command)
+                {
+                    case "e":
+                        IsFinished = true;
+                        break;
+                    case "h":
+                        Player.Help();
+                        break;
+                    case "i":
+                        Player.ActualInventory();
+                        break;
+                    case "u":
+                        Player.Look();
+                        break;
+                    case "g":
+                        Player.Move(parameter);
+                        break;
+                    case "n":
+                        Player.Take(parameter);
+                        break;
+                    case "w":
+                        Player.Drop(parameter);
+                        break;
+                    case "a":
+                        Player.LookAt(parameter);
+                        break;
+                    case "l":
+                        Player.Loot(parameter);
+                        break;
+                    case "atk":
+                        Player.Attack(parameter);
+                        break;
+                    case "inf":
+                        Player.PlayerInfo();
+                        break;
+                    case "b":
+                        Player.Use(parameter);
+                        break;
+                    case "s":
+                        Player.SpeakTo(parameter);
+                        break;
+                    default:
+                        Console.WriteLine("Ungültige Eingabe! Für Hilfe einfach (h) eingeben!");
+                        break;
+                }
+            }
+        }
             
         }
 
@@ -35,6 +118,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             Items.Add(new Weapon("Stock", "Ein gut abgehangenes Stück Holz. Leider etwas biegsam", true, 2));
             Items.Add(new Weapon("Streitaxt des Baluns", "Die legendäre Streitaxt von Balun. Ein bisschen angerostet aber immer noch messerscharf!", true, 10));
             Items.Add(new Weapon("Rostiges Schwert", "Ein rositger 1 1/2-Händer.", true, 4));
+            Items.Add(new Weapon("Schmiedehammer", "Ein Hammer zum Schieden oder um jemanden den Kopf einzuschlagen.", true, 6));
             Items.Add(new Weapon("Feuerpeitsche", "Am Griff hängen noch Barthaare-sehen aus wie von einem Zauberer...", true, 1000));
             Items.Add(new Weapon("Thors Hammer", "Niemand außer Thor selbst war bisher würdig genug ihn zu führen oder gabs da nicht mal einen Typen namens Steve?", false, 10000));
 
@@ -87,12 +171,85 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             //NPCs
 
             NPCs.Add(new NPC("Orkläufer", "Ein ganz normaler Ork. Nicht besonders helle.", 50, 5, "ARAHAHAHAHAHAHAHAHA", true, false));
-            NPCs.Add(new NPC("Uruk-hai", "Die Uruks sind meisten anderen Orks an Körpergröße und Kraft überlegen. Ob er uns töten will?", 50, 5, "Sarumaaaaaaaaaaaaaaniiii", false, true));
-            NPCs.Add(new NPC("Orkläufer", "Ein ganz normaler Ork. Nicht besonders helle.", 50, 5, "ARAHAHAHAHAHAHAHAHA", true, false));
-            NPCs.Add(new NPC("Orkläufer", "Ein ganz normaler Ork. Nicht besonders helle.", 50, 5, "ARAHAHAHAHAHAHAHAHA", true, false));
-            NPCs.Add(new NPC("Orkläufer", "Ein ganz normaler Ork. Nicht besonders helle.", 50, 5, "ARAHAHAHAHAHAHAHAHA", true, false));
-            NPCs.Add(new NPC("Orkläufer", "Ein ganz normaler Ork. Nicht besonders helle.", 50, 5, "ARAHAHAHAHAHAHAHAHA", true, false));
-            NPCs.Add(new NPC("Orkläufer", "Ein ganz normaler Ork. Nicht besonders helle.", 50, 5, "ARAHAHAHAHAHAHAHAHA", true, false));
+            NPCs.Add(new NPC("Uruk-hai", "Die Uruks sind meisten anderen Orks an Körpergröße und Kraft überlegen. Ob er uns töten will?", 75, 5, "Sarumaaaaaaaaaaaaaaniiii", false, true));
+            NPCs.Add(new NPC("Zombie Balun", "Der arme Balun. Was ihm wohl zugestoßen ist?", 75, 6, "*Hechel* *Hechel*", true, false));
+            NPCs.Add(new NPC("Schmied", "Endlich ein Überlebender. Vielleicht kann er mir sagen, was hier passiert ist?", 50, 5, "Für Balun!", false, true));
+            NPCs.Add(new NPC("Zwergenleiche", "Ein toter Zwerg. Vielleicht hat er etwas von Wert bei sich. Er braucht es jetzt ja nicht mehr", 0, 0, "...", false, false));
+            NPCs.Add(new NPC("Orkleiche", "Ein toter Ork. Vielleicht hat er etwas von Wert bei sich. Er hatte es sowieso nicht verdient", 0, 0, "...", false, false));
+            NPCs.Add(new NPC("Balrog", "Der Balrog von Goria. Ein Dämon des Schreckens", 150, 10, "durbaaaaaatulûk!", true, false));
+
+            // NPCs Inventory
+
+            GetNPCByName("Orkläufer").Inventory.Add(GetItemByName("Orkzahn"));
+            GetNPCByName("Orkläufer").Inventory.Add(GetItemByName("Stock"));
+
+            GetNPCByName("Uruk-hai").Inventory.Add(GetItemByName("Uruk-Horn"));
+            GetNPCByName("Uruk-hai").Inventory.Add(GetItemByName("Rostiges Schwert"));
+
+            GetNPCByName("Zombie Balun").Inventory.Add(GetItemByName("Kleiner Heiltrank"));
+            GetNPCByName("Zombie Balun").Inventory.Add(GetItemByName("Streitaxt des Baluns"));
+
+            GetNPCByName("Schmied").Inventory.Add(GetItemByName("Schmiedehammer"));
+            GetNPCByName("Schmied").Inventory.Add(GetItemByName("Großer Heiltrank"));
+
+            GetNPCByName("Orkleiche").Inventory.Add(GetItemByName("Heilshot"));
+            GetNPCByName("Orkleiche").Inventory.Add(GetItemByName("Stricknadeln"));
+
+            GetNPCByName("Zwergenleiche").Inventory.Add(GetItemByName("Metbierhorn"));
+            GetNPCByName("Zwergenleiche").Inventory.Add(GetItemByName("Licht Herrendils"));
+
+            GetNPCByName("Balrog").Inventory.Add(GetItemByName("Feuerpeitsche"));
+
+            //NPC to Rooms
+
+            GetRoomByName("Eingangshalle").NPCs.Add(GetNPCByName("Orkläufer"));
+            GetRoomByName("Eingangshalle").NPCs.Add(GetNPCByName("Uruk-hai"));
+
+            GetRoomByName("Grabkammer von Balun").NPCs.Add(GetNPCByName("Zombie Balun"));
+
+            GetRoomByName("Thronsaal").NPCs.Add(GetNPCByName("Zwergenleiche"));
+
+            GetRoomByName("Schmiede").NPCs.Add(GetNPCByName("Schmied"));
+
+            GetRoomByName("Einundzwanzigste Halle").NPCs.Add(GetNPCByName("Orkleiche"));
+
+            GetRoomByName("Brücke von Khazad-dumm").NPCs.Add(GetNPCByName("Balrog"));
+
+            //Player
+
+            Player.Create("Herr Vorragend", "Du bist einfach hervorragend!", 100, 2, GetRoomByName("Eingangstore von Gloria"));
+            Player = Player.Instance;
+
+            // NPC Dialoglines
+
+            GetNPCByName("Uruk-hai").DialogLines.Add(new CharDialogLine("Was willst du hier Mensch?", 0, null));
+            GetNPCByName("Uruk-hai").DialogLines.Add(new CharDialogLine("Dann geh mir aus den Augen, sonst werde ich dich be lebenddigem Leibe fressen.", 1, null));
+            GetNPCByName("Uruk-hai").DialogLines.Add(new CharDialogLine("Dann versuch es doch, solange du noch kannst.", 2, null));
+
+            GetNPCByName("Schmied").DialogLines.Add(new CharDialogLine("Endlich ein Lebender der kein Ork ist! Hast du den Uruk in der Eingangshalle getötet?", 0, null));
+            GetNPCByName("Schmied").DialogLines.Add(new CharDialogLine("Beweis es wenn du mir sein Horn bringst bekommst etwas von mir!", 1, null));
+
+
+
+            //PlayerDialog
+
+            Player.Dialogs.Add(new PlayerDialog(GetNPCByName("Uruk-hai")));
+            Player.Dialogs.Add(new PlayerDialog(GetNPCByName("Schmied")));
+
+            //PlayerDialoglines
+
+            GetPlayerDialogByDialogPartnerName("Uruk-hai").DialogLines.Add(new PlayerDialogLine("Gar nichts. Ich bin nur auf der Durchreise.", 0, null, 1, 1));
+            GetPlayerDialogByDialogPartnerName("Uruk-hai").DialogLines.Add(new PlayerDialogLine("Dich töten.", 0, null, 2, 2));
+
+
+            GetPlayerDialogByDialogPartnerName("Schmied").DialogLines.Add(new PlayerDialogLine("Ja", 0, null, 1, 1));
+            GetPlayerDialogByDialogPartnerName("Schmied").DialogLines.Add(new PlayerDialogLine("Nein", 0, null, 2, 2));
+
+            
+
+
+
+
 
 
 
@@ -118,7 +275,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             return NPCs.Find(x => x.Name.ToLower() == name.ToLower());
         }
 
-        private static PlayerDialog GetPlayerDialogModelByDialogPartnerName(string name)
+        private static PlayerDialog GetPlayerDialogByDialogPartnerName(string name)
         {
             return Player.Dialogs.Find(x => x.DialogPartner.Name.ToLower() == name.ToLower());
         }
