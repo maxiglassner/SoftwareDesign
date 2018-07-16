@@ -155,8 +155,8 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             GetRoomByName("Einundzwanzigste Halle").Neighbors.Add(Direction.Süden, GetRoomByName("Brücke von Khazad-dumm"));
             GetRoomByName("Einundzwanzigste Halle").Neighbors.Add(Direction.Westen, GetRoomByName("Thronsaal"));
 
-            GetRoomByName("Brücke von Khazad-Dumm").Neighbors.Add(Direction.Norden, GetRoomByName("Einundzwanzigste Halle"));
-            GetRoomByName("Brücke von Khazad-Dumm").Neighbors.Add(Direction.Süden, GetRoomByName("Bergkamm"));
+            GetRoomByName("Brücke von Khazad-dumm").Neighbors.Add(Direction.Norden, GetRoomByName("Einundzwanzigste Halle"));
+            GetRoomByName("Brücke von Khazad-dumm").Neighbors.Add(Direction.Süden, GetRoomByName("Bergkamm"));
 
             GetRoomByName("Bergkamm").Neighbors.Add(Direction.Norden, GetRoomByName("Brücke von Khazad-Dumm"));
 
@@ -166,17 +166,17 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 
             GetRoomByName("Schmiede").Inventory.Add(GetItemByName("Thors Hammer"));
 
-            GetRoomByName("Thronsaal").Inventory.Add(GetItemByName("Krone"));
+            GetRoomByName("Thronsaal").Inventory.Add(GetItemByName("Zerbrochene Krone"));
 
             //NPCs
 
-            NPCs.Add(new NPC("Orkläufer", "Ein ganz normaler Ork. Nicht besonders helle.", 50, 5, "ARAHAHAHAHAHAHAHAHA!", true, false));
-            NPCs.Add(new NPC("Uruk-hai", "Die Uruks sind den meisten anderen Orks an Körpergröße und Kraft überlegen. Ob er uns töten will?", 75, 5, "Sarumaaaaaaaaaaaaaaniiii!", false, true));
+            NPCs.Add(new NPC("Orkläufer", "Ein ganz normaler Ork. Nicht besonders helle.", 30, 5, "ARAHAHAHAHAHAHAHAHA!", true, false));
+            NPCs.Add(new NPC("Uruk-hai", "Die Uruks sind den meisten anderen Orks an Körpergröße und Kraft überlegen. Ob er uns töten will?", 50, 5, "Sarumaaaaaaaaaaaaaaniiii!", false, true));
             NPCs.Add(new NPC("Zombie Balun", "Der arme Balun. Was ihm wohl zugestoßen ist?", 75, 6, "*Hechel* *Hechel*", true, false));
             NPCs.Add(new NPC("Schmied", "Endlich ein Überlebender. Vielleicht kann er mir sagen, was hier passiert ist?", 50, 5, "Für Balun!", false, true));
-            NPCs.Add(new NPC("Zwergenleiche", "Ein toter Zwerg. Vielleicht hat er etwas von Wert bei sich. Er braucht es jetzt ja nicht mehr", 0, 0, "...", false, false));
-            NPCs.Add(new NPC("Orkleiche", "Ein toter Ork. Vielleicht hat er etwas von Wert bei sich. Er hatte es sowieso nicht verdient", 0, 0, "...", false, false));
-            NPCs.Add(new NPC("Balrog", "Der Balrog von Goria. Ein Dämon des Schreckens", 150, 10, "durbaaaaaatulûk!", true, false));
+            NPCs.Add(new NPC("Zwergen", "Ein toter Zwerg. Vielleicht hat er etwas von Wert bei sich. Er braucht es jetzt ja nicht mehr", 0, 0, "...", false, false));
+            NPCs.Add(new NPC("Ork", "Ein toter Ork. Vielleicht hat er etwas von Wert bei sich. Er hatte es sowieso nicht verdient", 0, 0, "...", false, false));
+            NPCs.Add(new NPC("Balrog", "Der Balrog von Goria. Ein Dämon des Schreckens", 100, 10, "durbaaaaaatulûk!", true, false));
 
             // NPCs Inventory
 
