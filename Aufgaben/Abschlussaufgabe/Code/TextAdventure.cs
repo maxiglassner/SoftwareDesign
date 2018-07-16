@@ -18,7 +18,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             Console.WriteLine(Environment.NewLine + "Herzlich Willkommen bei den Geheimnissen der Minen von Gloria!" + Environment.NewLine);
             Console.WriteLine("Du hast dich durch tiefe Täler bis hin zum höchtsen Gipfel durchgeschlagen. Du bist müde und ausgelaugt und weißt nicht wohin mit dir.");
             Console.WriteLine("Du machst halt an einem See. Mittlerweile ist es dunkel geworden und der Mond schiebt sich hinter den Wolken hervor.");
-            Console.WriteLine("Doch was ist das. Die Felswand an der du dich bis eben gelehnt hast, erstrahlt im Schein den Mondes und eine Tür zeichnet sich hab.");
+            Console.WriteLine("Doch was ist das. Die Felswand an der du dich bis eben gelehnt hast, erstrahlt im Schein des Mondes und eine Tür zeichnet sich ab.");
             Console.WriteLine("Das muss Mithril sein. Es wird nur im Mond- und Sternenlicht sichtbar. Es ist der sagenumwobene Eingang zu den Minen von Gloria...");
 
             while(true)
@@ -143,7 +143,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             GetRoomByName("Eingangshalle").Neighbors.Add(Direction.Süden, GetRoomByName("Thronsaal"));
             GetRoomByName("Eingangshalle").Neighbors.Add(Direction.Westen, GetRoomByName("Grabkammer von Balun"));
 
-            GetRoomByName("Grabkammer von Balun").Neighbors.Add(Direction.Westen, GetRoomByName("Eingangshalle"));
+            GetRoomByName("Grabkammer von Balun").Neighbors.Add(Direction.Osten, GetRoomByName("Eingangshalle"));
 
             GetRoomByName("Schmiede").Neighbors.Add(Direction.Osten, GetRoomByName("Eingangshalle"));
             GetRoomByName("Schmiede").Neighbors.Add(Direction.Süden, GetRoomByName("Einundzwanzigste Halle"));

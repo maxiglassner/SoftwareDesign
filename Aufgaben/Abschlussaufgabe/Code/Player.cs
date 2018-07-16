@@ -294,22 +294,22 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 
             switch (direction)
             {
-                case "Norden": case "N": case "n":
+                case "n":
                     CurrentRoom.Neighbors.TryGetValue(Direction.Norden, out nextRoom);
                     validDirection = true;
                     selectedDirection = Direction.Norden;
                     break;
-                case "Süden": case "S": case "s":
+                case "s":
                     CurrentRoom.Neighbors.TryGetValue(Direction.Süden, out nextRoom);
                     validDirection = true;
                     selectedDirection = Direction.Süden;
                     break;
-                case "Osten": case "E": case "e":
+                case "o":
                     CurrentRoom.Neighbors.TryGetValue(Direction.Osten, out nextRoom);
                     validDirection = true;
                     selectedDirection = Direction.Osten;
                     break;
-                case "Westen": case "W": case "w":
+                case "w":
                     CurrentRoom.Neighbors.TryGetValue(Direction.Westen, out nextRoom);
                     validDirection = true;
                     selectedDirection = Direction.Westen;
