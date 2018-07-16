@@ -73,7 +73,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 
                if (player.Health == 0)
                {
-                   Console.WriteLine("Dieses Mal warst du nicht stark genug. Die Minen von Gloria sind ein rauer Ort. Hoffentlich wirst du bei nächsten Mal besser sein!");
+                   Console.WriteLine(" Der Tod hat dich ereilt. Dieses Mal warst du nicht stark genug. Die Minen von Gloria sind ein rauer Ort. Hoffentlich wirst du bei nächsten Mal besser sein!");
                    TextAdventure.IsFinished = true;
                    break;
                }  
@@ -89,13 +89,13 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             
             if(hardHit)
             {
-                chanceToHit = 50;
+                chanceToHit = 60;
                 minDamageMultiplier = 2;
                 maxDamageMultiplier = 4;
             } 
             else
             {
-                chanceToHit = 80;
+                chanceToHit = 90;
                 minDamageMultiplier = 1;
                 maxDamageMultiplier = 2;
             }
@@ -123,7 +123,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 
             if(!dialogPartner.CanSpeak)
             {
-                Console.WriteLine("Sorry, aber mit " + dialogPartner.Name + " dem kannst du nicht sprechen. Das hättest du dir auch denken können, so wie der aussieht.");
+                Console.WriteLine("Sorry, aber mit " + dialogPartner.Name + " kannst du nicht sprechen. Das hättest du dir auch denken können, so wie der aussieht.");
                 return;
             }
 

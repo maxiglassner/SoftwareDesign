@@ -50,7 +50,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             Console.WriteLine("(n <Name eines Inventory im Raum>) 'nehmen' - um ein Item aus dem Raum aufzunehmen.");
             Console.WriteLine("(w <Name eines Inventory in deinem Inventar>) 'weglegen' - um ein Item aus deinem Iventar in dem Raum abzulegen.");
             Console.WriteLine("(b <Name eines Inventory in deinem Inventar>) 'benutzen' - um eine Heiltrank zu trinken oder eine Waffe auszurüsten.");
-            Console.WriteLine("(g <Richtung in die du gehen willst bzw jeweiliger Anfangsbuchstabe>)'gehen' - um in die ausgewählte Richtung den Raum zu verlassen (Norden, Osten, Süden oder Westenen)");
+            Console.WriteLine("(g <Anfangsbuchstabe der Himmelsrichtung>)'gehen' - um in die ausgewählte Richtung den Raum zu verlassen (Norden, Osten, Süden oder Westenen)");
             Console.WriteLine("(s <Name einer npc im Raum>) 'sprechen' - um mit einer npc im Raum zu sprechen.");
             Console.WriteLine("(atk <Name eines NPC im Raum> 'angreifen' -um einem NPC anzugreifen.");            
             Console.WriteLine("(e) 'Ende' - um das Spiel zu beenden.");

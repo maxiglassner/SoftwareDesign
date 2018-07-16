@@ -15,7 +15,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
         {
              {
             LoadGameData();
-            Console.WriteLine(Environment.NewLine + "Herzlich Willkommen bei den Geheimnissen der Minen von Gloria!" + Environment.NewLine);
+            Console.WriteLine(Environment.NewLine + "Die Geheimnisse von Gloria!" + Environment.NewLine);
             Console.WriteLine("Du hast dich durch tiefe Täler bis hin zum höchtsen Gipfel durchgeschlagen. Du bist müde und ausgelaugt und weißt nicht wohin mit dir.");
             Console.WriteLine("Du machst halt an einem See. Mittlerweile ist es dunkel geworden und der Mond schiebt sich hinter den Wolken hervor.");
             Console.WriteLine("Doch was ist das. Die Felswand an der du dich bis eben gelehnt hast, erstrahlt im Schein des Mondes und eine Tür zeichnet sich ab.");
@@ -124,7 +124,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 
             //Rooms
             Rooms.Add(new Room("Eingangstore von Gloria", "Die Eingangstore zu den gewaltigen Minen von Gloria. Sprich Freund und tritt ein!"));
-            Rooms.Add(new Room("Eingangshalle", "Herzlich Willkommen in den Minen von Gloria, werdet Zeuge der Gastfreundschaft der Zwerge, gut abgehangenes Fleisch, prasselnde Kaminfeu... Ähm was ist den hier los wieso liegen hier so viele Zwergenskelette?!"));
+            Rooms.Add(new Room("Eingangshalle", "Herzlich Willkommen in den Minen von Gloria, werdet Zeuge der Gastfreundschaft der Zwerge, gut abgehangenes Fleisch, prasselnde Kaminfeu... Ähm was ist denn hier los wieso liegen hier so viele Zwergenskelette?!"));
             Rooms.Add(new Room("Grabkammer von Balun", "Eine Grabkammer, düster und kalt. Eine Grabkammer eben."));
             Rooms.Add(new Room("Schmiede", "Eine gewaltige Zwergenschmiede. Wie es wohl hier früher ausgesehen hat?"));
             Rooms.Add(new Room("Thronsaal", "Der Thronsaal Glorias. Einst prunkvoll geschmückt mit Gold, Silber und Edelsteinen. Doch jetzt ein trostloses Chaos."));
