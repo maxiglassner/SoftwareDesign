@@ -1,0 +1,11 @@
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\Abschlussaufgabe\Code\bin\Debug\netcoreapp2.0\Code.deps.json
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\Abschlussaufgabe\Code\bin\Debug\netcoreapp2.0\Code.runtimeconfig.json
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\Abschlussaufgabe\Code\bin\Debug\netcoreapp2.0\Code.runtimeconfig.dev.json
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\Abschlussaufgabe\Code\bin\Debug\netcoreapp2.0\Code.dll
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\Abschlussaufgabe\Code\bin\Debug\netcoreapp2.0\Code.pdb
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\Abschlussaufgabe\Code\obj\Debug\netcoreapp2.0\Code.csprojResolveAssemblyReference.cache
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\Abschlussaufgabe\Code\obj\Debug\netcoreapp2.0\Code.csproj.CoreCompileInputs.cache
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\Abschlussaufgabe\Code\obj\Debug\netcoreapp2.0\Code.AssemblyInfoInputs.cache
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\Abschlussaufgabe\Code\obj\Debug\netcoreapp2.0\Code.AssemblyInfo.cs
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\Abschlussaufgabe\Code\obj\Debug\netcoreapp2.0\Code.dll
+G:\Hochschule\GitHubFiles\SoftwareDesign\Aufgaben\Abschlussaufgabe\Code\obj\Debug\netcoreapp2.0\Code.pdb

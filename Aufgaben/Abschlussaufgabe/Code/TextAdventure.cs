@@ -18,7 +18,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             Console.WriteLine(Environment.NewLine + "Herzlich Willkommen bei den Geheimnissen der Minen von Gloria!" + Environment.NewLine);
             Console.WriteLine("Du hast dich durch tiefe Täler bis hin zum höchtsen Gipfel durchgeschlagen. Du bist müde und ausgelaugt und weißt nicht wohin mit dir.");
             Console.WriteLine("Du machst halt an einem See. Mittlerweile ist es dunkel geworden und der Mond schiebt sich hinter den Wolken hervor.");
-            Console.WriteLine("Doch was ist das. Die Fehlswand an der du dich bis eben gelehnt hast, erstrahlt im Schein den Mondes und eine Tür zeichnet sich hab.");
+            Console.WriteLine("Doch was ist das. Die Felswand an der du dich bis eben gelehnt hast, erstrahlt im Schein den Mondes und eine Tür zeichnet sich hab.");
             Console.WriteLine("Das muss Mithril sein. Es wird nur im Mond- und Sternenlicht sichtbar. Es ist der sagenumwobene Eingang zu den Minen von Gloria...");
 
             while(true)
@@ -37,7 +37,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 
                 
 
-                Console.WriteLine("Um Hilfe zu erhalten, gebe einfach ein 'h' ein" + Environment.NewLine);
+                Console.WriteLine(Environment.NewLine + "Um Hilfe zu erhalten, gebe einfach ein 'h' ein" + Environment.NewLine);
 
                 string input = Console.ReadLine().ToLower();
 
@@ -170,8 +170,8 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 
             //NPCs
 
-            NPCs.Add(new NPC("Orkläufer", "Ein ganz normaler Ork. Nicht besonders helle.", 50, 5, "ARAHAHAHAHAHAHAHAHA", true, false));
-            NPCs.Add(new NPC("Uruk-hai", "Die Uruks sind meisten anderen Orks an Körpergröße und Kraft überlegen. Ob er uns töten will?", 75, 5, "Sarumaaaaaaaaaaaaaaniiii", false, true));
+            NPCs.Add(new NPC("Orkläufer", "Ein ganz normaler Ork. Nicht besonders helle.", 50, 5, "ARAHAHAHAHAHAHAHAHA!", true, false));
+            NPCs.Add(new NPC("Uruk-hai", "Die Uruks sind den meisten anderen Orks an Körpergröße und Kraft überlegen. Ob er uns töten will?", 75, 5, "Sarumaaaaaaaaaaaaaaniiii!", false, true));
             NPCs.Add(new NPC("Zombie Balun", "Der arme Balun. Was ihm wohl zugestoßen ist?", 75, 6, "*Hechel* *Hechel*", true, false));
             NPCs.Add(new NPC("Schmied", "Endlich ein Überlebender. Vielleicht kann er mir sagen, was hier passiert ist?", 50, 5, "Für Balun!", false, true));
             NPCs.Add(new NPC("Zwergenleiche", "Ein toter Zwerg. Vielleicht hat er etwas von Wert bei sich. Er braucht es jetzt ja nicht mehr", 0, 0, "...", false, false));
@@ -217,13 +217,13 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 
             //Player
 
-            Player.Create("Herr Vorragend", "Du bist einfach hervorragend!", 100, 2, GetRoomByName("Eingangstore von Gloria"));
+            Player.Create("Herr Vorragend", "Du bist einfach hervorragend!", 200, 4, GetRoomByName("Eingangstore von Gloria"));
             Player = Player.Instance;
 
             // NPC Dialoglines
 
             GetNPCByName("Uruk-hai").DialogLines.Add(new CharDialogLine("Was willst du hier Mensch?", 0, null));
-            GetNPCByName("Uruk-hai").DialogLines.Add(new CharDialogLine("Dann geh mir aus den Augen, sonst werde ich dich be lebenddigem Leibe fressen.", 1, null));
+            GetNPCByName("Uruk-hai").DialogLines.Add(new CharDialogLine("Dann geh mir aus den Augen, sonst werde ich dich bei lebendigem Leibe fressen.", 1, null));
             GetNPCByName("Uruk-hai").DialogLines.Add(new CharDialogLine("Dann versuch es doch, solange du noch kannst.", 2, null));
 
             GetNPCByName("Schmied").DialogLines.Add(new CharDialogLine("Endlich ein Lebender der kein Ork ist! Hast du den Uruk in der Eingangshalle getötet?", 0, null));

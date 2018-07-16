@@ -15,7 +15,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
     {
         bool leaveFight = false;
         
-        Console.WriteLine(opponent.FightQuote + opponent.Name + " kommt auf dich zu.");
+        Console.WriteLine(opponent.FightQuote + " " + opponent.Name + " kommt auf dich zu und greift an.");
 
         while(!leaveFight)
         {
@@ -43,13 +43,13 @@ namespace TextAdeventure_Die_Minen_von_Gloria
                     break;
 
                 default:
-                    Console.WriteLine("Ist es so schwer einfach eine der Zahlen 1, 2 oder 3 ein zu tippen? Los versuche es bitte nocheinmal!");
+                    Console.WriteLine("Ist es so schwer einfach eine der Zahlen 1, 2 oder 3 ein zu tippen? Tja jetzt ist dein Gegner dran!");
                     break;                  
             }
 
              if (opponent.Health == 0)
                 {
-                    Console.WriteLine("You won!");
+                    Console.WriteLine("Du hast ihn besiegt. Herzlichen Glückwunsch! Du kannst in jetzt looten.");
                     opponent.Description += " " + " Oh stimmt ja und du hast ihn umgebracht.";
                     break;
                 }
@@ -109,13 +109,18 @@ namespace TextAdeventure_Die_Minen_von_Gloria
                 victim.Health -= damage;
                 if (victim.Health <= 0)
                     victim.Health = 0;
-                Console.WriteLine(victim.Name + " hat " + damage + " Schaden erlitten. " + victim.Name + " hat jetzt noch" + victim.Health + " Leben.");
+                Console.WriteLine(victim.Name + " hat " + damage + " Schaden erlitten. " + victim.Name + " hat jetzt noch " + victim.Health + " Leben.");
             }
             
         }
 
         public void Dialog (Player player, NPC dialogPartner)
         {
+            if(player.Health <=0)
+            {
+                return;
+            }
+
             if(!dialogPartner.CanSpeak)
             {
                 Console.WriteLine("Sorry, aber mit " + dialogPartner.Name + " dem kannst du nicht sprechen. Das hättest du dir auch denken können, so wie der aussieht.");
@@ -148,12 +153,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
                 string command = Console.ReadLine();
                 int commandNumber;
 
-                if(command == "quit" || command == "q")
-                {
-                    TextAdventure.IsFinished = true;
-                    break;
-                }
-                else if (command == "0")
+                if (command == "0")
                 {
                     Console.WriteLine("Du hast das Gespräch beendet");
                     break;

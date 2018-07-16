@@ -58,13 +58,13 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 
          public void Look ()
         {
-            Console.WriteLine("Du schaust dich in " + CurrentRoom.Name + "um.");
+            Console.WriteLine("Du schaust dich in " + CurrentRoom.Name + " um.");
             Console.WriteLine(CurrentRoom.Description);
 
             Console.WriteLine(Environment.NewLine + "Du kannst von hier aus in folgende Räume gehen:");
             foreach(KeyValuePair<Direction, Room> neighbor in CurrentRoom.Neighbors)
             {
-                Console.WriteLine("Du kannst " + neighbor.Value.Name + " im " + neighbor.Key + ".");
+                Console.WriteLine(neighbor.Value.Name + " im " + neighbor.Key);
             }
 
             Console.WriteLine(Environment.NewLine + "Es befinden sich folgende NPCs hier:");
@@ -75,7 +75,12 @@ namespace TextAdeventure_Die_Minen_von_Gloria
                 
             foreach (NPC npc in CurrentRoom.NPCs)
             {
-                Console.WriteLine(" -" + npc.Name);
+                Console.Write(" -" + npc.Name);
+                if (npc.Health <= 0)
+                {
+                    Console.WriteLine(" (tot)");
+                }
+
             }
 
             Console.WriteLine(Environment.NewLine + "Beim näheren Hinsehen siehst du noch:");
@@ -91,28 +96,28 @@ namespace TextAdeventure_Die_Minen_von_Gloria
                 
         }
 
-        public void LookAt (string npc)
+        public void LookAt (string thing)
         {
-           if (String.IsNullOrWhiteSpace(npc))
+           if (String.IsNullOrWhiteSpace(thing))
            {
                 Console.WriteLine ("Bitte schreib dazu, was du dir ansehen möchtest.");
            }
             else
             {
-                GameObject subject = CurrentRoom.Inventory.Find(x => x.Name.ToLower() == npc);
+                GameObject subject = CurrentRoom.Inventory.Find(x => x.Name.ToLower() == thing);
                 if (subject == null)
                 {
-                    subject = CurrentRoom.NPCs.Find(x => x.Name.ToLower() == npc);
+                    subject = CurrentRoom.NPCs.Find(x => x.Name.ToLower() == thing);
                 }
                     
                 if(subject == null)
                 {
-                    subject = Inventory.Find(x => x.Name.ToLower() == npc);
+                    subject = Inventory.Find(x => x.Name.ToLower() == thing);
                 }
                     
                 if(subject == null)
                 {
-                    Console.WriteLine("Es gibt hier niemanden der '" + npc + "' heißt.");
+                    Console.WriteLine("Es gibt hier niemanden der '" + thing + "' heißt.");
                 }
                 else
                 {
@@ -128,11 +133,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
                         Potion potion = (Potion) subject;
                         Console.WriteLine(potion.Name  + " kann getrunken werden und gibt dir " + potion.HealthRecover + " Lebenspunkte wieder.");
                     } 
-                    else
-                    {
-                        Item item = (Item) subject;
-                        Console.WriteLine(item.Name + ": " + item.Description);
-                    }
+                  
                 }
                 
             }
@@ -156,6 +157,8 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 
         public void PlayerInfo ()
         {
+            Console.WriteLine(Name);
+            Console.WriteLine(Description);
             Console.WriteLine("Deine aktuellen Werte:");
             Console.WriteLine("Gesundheit: " + Health + " / " + MaxHealth );
             Console.WriteLine("Angriffsstärke: " + Damage);
