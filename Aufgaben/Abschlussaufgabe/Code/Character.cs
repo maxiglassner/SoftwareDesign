@@ -116,14 +116,14 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 
         public void Dialog (Player player, NPC dialogPartner)
         {
-            if(player.Health <=0)
+            if(dialogPartner.Health <=0)
             {
                 return;
             }
 
             if(!dialogPartner.CanSpeak)
             {
-                Console.WriteLine("Sorry, aber mit " + dialogPartner.Name + " dem kannst du nicht sprechen. Das hättest du dir auch denken können, so wie der aussieht.");
+                Console.WriteLine("Sorry, aber mit " + dialogPartner.Name + " kannst du nicht sprechen. Das hättest du dir auch denken können, so wie der aussieht.");
                 return;
             }
 

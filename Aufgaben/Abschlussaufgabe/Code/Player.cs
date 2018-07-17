@@ -344,7 +344,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             else
                 if(CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == npc) != null)
                     if(CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == npc).Health == 0)
-                        Console.WriteLine("Du kannst du mit keiner Leiche sprechen. Schließlich ist sie naja tod und wird dir nicht mehr antworten können.");
+                        Console.WriteLine("Du kannst du mit keiner Leiche sprechen. Schließlich ist sie naja tot und wird dir nicht mehr antworten können.");
                     else
                         Dialog(TextAdventure.Player, CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == npc));
                 else if (CurrentRoom.Inventory.Find(x =>  x.Name.ToLower() == npc) != null)

@@ -40,14 +40,28 @@ namespace TextAdeventure_Die_Minen_von_Gloria
                 Console.WriteLine(Environment.NewLine + "Um Hilfe zu erhalten, gebe einfach ein 'h' ein" + Environment.NewLine);
 
                 string input = Console.ReadLine().ToLower();
+                string command;
 
-                string command = input.IndexOf(" ") > -1 
-                  ? input.Substring(0, input.IndexOf(" "))
-                  : input;
+                if (input.IndexOf(" ") > -1)
+                {
+                    command = input.Substring(0, input.IndexOf(" "));
+                }
+                else
+                {
+                    command = input;
+                }
+                
+                string parameter;
 
-                string parameter = input.IndexOf(" ") > -1 
-                  ? input.Substring(input.IndexOf(" ") + 1, input.Length - (input.IndexOf(" ") + 1))
-                  : "";
+                if(input.IndexOf(" ") > -1)
+                {
+                  parameter = input.Substring(input.IndexOf(" ") + 1, input.Length - (input.IndexOf(" ") + 1));  
+                }
+                else
+                {
+                    parameter = "";
+                }
+               
                 
                 switch(command)
                 {
@@ -166,7 +180,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 
             GetRoomByName("Schmiede").Inventory.Add(GetItemByName("Thors Hammer"));
 
-            GetRoomByName("Thronsaal").Inventory.Add(GetItemByName("Krone"));
+            GetRoomByName("Thronsaal").Inventory.Add(GetItemByName("Zerbrochene Krone"));
 
             //NPCs
 
