@@ -133,7 +133,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 
             while(dialogPartner.CanSpeak)
             {
-                CharDialogLine npcLine = dialogPartner.DialogLines.Find(x => x.DialogPhase == playerDialog.DialogPhase);
+                CharDialogLine npcLine = dialogPartner.DialogLines.Find(line => line.DialogPhase == playerDialog.DialogPhase);
                 Console.WriteLine(Environment.NewLine + dialogPartner.Name + ": " + npcLine.Line);
 
                 if (npcLine.Reward != null && dialogPartner.Inventory.Contains(npcLine.Reward))
@@ -160,7 +160,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
                 }
                 else if (Int32.TryParse(command, out commandNumber))
                 {
-                    PlayerDialogLine playerDialogLine = playerDialog.DialogLines.Find(x => x.LineNumber == commandNumber && x.DialogPhase == playerDialog.DialogPhase);
+                    PlayerDialogLine playerDialogLine = playerDialog.DialogLines.Find(line => line.LineNumber == commandNumber && line.DialogPhase == playerDialog.DialogPhase);
                     if(playerDialogLine == null)
                         Console.WriteLine("Bitte wähle eine Zahl aus, die einer Antwortzeile entspricht.");
                     else
