@@ -188,7 +188,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             NPCs.Add(new NPC("Uruk-hai", "Die Uruks sind den meisten anderen Orks an Körpergröße und Kraft überlegen. Ob er uns töten will?", 50, 5, "Sarumaaaaaaaaaaaaaaniiii!", false, true));
             NPCs.Add(new NPC("Zombie Balun", "Der arme Balun. Was ihm wohl zugestoßen ist?", 75, 6, "*Hechel* *Hechel*", true, false));
             NPCs.Add(new NPC("Schmied", "Endlich ein Überlebender. Vielleicht kann er mir sagen, was hier passiert ist?", 50, 5, "Für Balun!", false, true));
-            NPCs.Add(new NPC("Zwergen", "Ein toter Zwerg. Vielleicht hat er etwas von Wert bei sich. Er braucht es jetzt ja nicht mehr", 0, 0, "...", false, false));
+            NPCs.Add(new NPC("Zwerg", "Ein toter Zwerg. Vielleicht hat er etwas von Wert bei sich. Er braucht es jetzt ja nicht mehr", 0, 0, "...", false, false));
             NPCs.Add(new NPC("Ork", "Ein toter Ork. Vielleicht hat er etwas von Wert bei sich. Er hatte es sowieso nicht verdient", 0, 0, "...", false, false));
             NPCs.Add(new NPC("Balrog", "Der Balrog von Goria. Ein Dämon des Schreckens", 100, 10, "durbaaaaaatulûk!", true, false));
 
@@ -206,11 +206,11 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             GetNPCByName("Schmied").Inventory.Add(GetItemByName("Schmiedehammer"));
             GetNPCByName("Schmied").Inventory.Add(GetItemByName("Großer Heiltrank"));
 
-            GetNPCByName("Orkleiche").Inventory.Add(GetItemByName("Heilshot"));
-            GetNPCByName("Orkleiche").Inventory.Add(GetItemByName("Stricknadeln"));
+            GetNPCByName("Ork").Inventory.Add(GetItemByName("Heilshot"));
+            GetNPCByName("Ork").Inventory.Add(GetItemByName("Stricknadeln"));
 
-            GetNPCByName("Zwergenleiche").Inventory.Add(GetItemByName("Metbierhorn"));
-            GetNPCByName("Zwergenleiche").Inventory.Add(GetItemByName("Licht Herrendils"));
+            GetNPCByName("Zwerg").Inventory.Add(GetItemByName("Metbierhorn"));
+            GetNPCByName("Zwerg").Inventory.Add(GetItemByName("Licht Herrendils"));
 
             GetNPCByName("Balrog").Inventory.Add(GetItemByName("Feuerpeitsche"));
 
@@ -221,11 +221,11 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 
             GetRoomByName("Grabkammer von Balun").NPCs.Add(GetNPCByName("Zombie Balun"));
 
-            GetRoomByName("Thronsaal").NPCs.Add(GetNPCByName("Zwergenleiche"));
+            GetRoomByName("Thronsaal").NPCs.Add(GetNPCByName("Zwerg"));
 
             GetRoomByName("Schmiede").NPCs.Add(GetNPCByName("Schmied"));
 
-            GetRoomByName("Einundzwanzigste Halle").NPCs.Add(GetNPCByName("Orkleiche"));
+            GetRoomByName("Einundzwanzigste Halle").NPCs.Add(GetNPCByName("Ork"));
 
             GetRoomByName("Brücke von Khazad-dumm").NPCs.Add(GetNPCByName("Balrog"));
 
@@ -241,8 +241,9 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             GetNPCByName("Uruk-hai").DialogLines.Add(new CharDialogLine("Dann versuch es doch, solange du noch kannst.", 2, null));
 
             GetNPCByName("Schmied").DialogLines.Add(new CharDialogLine("Endlich ein Lebender der kein Ork ist! Hast du den Uruk in der Eingangshalle getötet?", 0, null));
-            GetNPCByName("Schmied").DialogLines.Add(new CharDialogLine("Vielen Dank! Hier das ist für dich.", 1, GetItemByName("Großer Heiltrank")));
-            GetNPCByName("Schmied").DialogLines.Add(new CharDialogLine("Schade. Wenn du das machst, bekommst etwas von mir", 2, GetItemByName("Großer Heiltrank")));
+            GetNPCByName("Schmied").DialogLines.Add(new CharDialogLine("Beweise es. gib mir das Uruk-Horn, dann bekommst du etwas von mir!", 3, null));
+            GetNPCByName("Schmied").DialogLines.Add(new CharDialogLine("Vielen Dank! Hier das ist für dich. -Item 'Großer Heiltrank erhalten-", 1, GetItemByName("Großer Heiltrank")));
+            GetNPCByName("Schmied").DialogLines.Add(new CharDialogLine("Schade. Wenn du das machst, bekommst etwas von mir", 2, null));
 
 
 
@@ -257,8 +258,10 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             GetPlayerDialogByDialogPartnerName("Uruk-hai").DialogLines.Add(new PlayerDialogLine("Dich töten.", 0, null, 2, 2));
 
 
-            GetPlayerDialogByDialogPartnerName("Schmied").DialogLines.Add(new PlayerDialogLine("Ja", 0, null, 1, 1));
+            GetPlayerDialogByDialogPartnerName("Schmied").DialogLines.Add(new PlayerDialogLine("Ja", 0, null, 1, 3));
             GetPlayerDialogByDialogPartnerName("Schmied").DialogLines.Add(new PlayerDialogLine("Nein", 0, null, 2, 2));
+            GetPlayerDialogByDialogPartnerName("Schmied").DialogLines.Add(new PlayerDialogLine("Okey hier. -Du gibst dem Schmied das Uruk-Horn-", 3, GetItemByName("Uruk-Horn"), 1, 1));
+            GetPlayerDialogByDialogPartnerName("Schmied").DialogLines.Add(new PlayerDialogLine("Das habe ich nicht. Aber ich hole es dir!", 3, null, 2, 4));
 
             
 
