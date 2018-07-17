@@ -6,14 +6,12 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 {
     class Player: Character
     {
-        private int MaxHealth;
-        private static Player _instance;
-        
+        private int MaxHealth;        
         public List<PlayerDialog> Dialogs = new List<PlayerDialog>();
         public Room CurrentRoom;
         public Weapon CurrentWeapon;
 
-        private Player (string name, string description, int maxHealth, int damage, Room currentRoom)
+        public Player (string name, string description, int maxHealth, int damage, Room currentRoom)
         {
             Name = name;
             Description = description;
@@ -23,22 +21,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             CurrentRoom = currentRoom;
         }
 
-        public static void Create (string name, string description, int health, int damage, Room currentRoom)
-        {
-            if (_instance != null)
-                throw new Exception ("Player already created!");
-            _instance = new Player (name, description, health, damage, currentRoom);
-        }
-        public static Player Instance
-        {
-            get
-            {
-                if(_instance == null)
-                    throw new Exception ("Player not created!");
-                return _instance;
-            }
-        }
-
+        
         public void Help() 
         {
             Console.WriteLine("Du hast folgende Interaktionsmöglichkeiten:");

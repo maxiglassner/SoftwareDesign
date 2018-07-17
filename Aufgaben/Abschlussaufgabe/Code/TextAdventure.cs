@@ -231,8 +231,8 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 
             //Player
 
-            Player.Create("Herr Vorragend", "Du bist einfach hervorragend!", 200, 4, GetRoomByName("Eingangstore von Gloria"));
-            Player = Player.Instance;
+            Player = new Player("Herr Vorragend", "Du bist einfach hervorragend!", 200, 4, GetRoomByName("Eingangstore von Gloria"));
+            
 
             // NPC Dialoglines
 
