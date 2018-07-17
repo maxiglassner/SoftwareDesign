@@ -6,14 +6,12 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 {
     class Player: Character
     {
-        private int MaxHealth;
-        private static Player _instance;
-        
+        private int MaxHealth;        
         public List<PlayerDialog> Dialogs = new List<PlayerDialog>();
         public Room CurrentRoom;
         public Weapon CurrentWeapon;
 
-        private Player (string name, string description, int maxHealth, int damage, Room currentRoom)
+        public Player (string name, string description, int maxHealth, int damage, Room currentRoom)
         {
             Name = name;
             Description = description;
@@ -23,22 +21,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             CurrentRoom = currentRoom;
         }
 
-        public static void Create (string name, string description, int health, int damage, Room currentRoom)
-        {
-            if (_instance != null)
-                throw new Exception ("Player already created!");
-            _instance = new Player (name, description, health, damage, currentRoom);
-        }
-        public static Player Instance
-        {
-            get
-            {
-                if(_instance == null)
-                    throw new Exception ("Player not created!");
-                return _instance;
-            }
-        }
-
+        
         public void Help() 
         {
             Console.WriteLine("Du hast folgende Interaktionsmöglichkeiten:");
@@ -344,7 +327,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             else
                 if(CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == npc) != null)
                     if(CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == npc).Health == 0)
-                        Console.WriteLine("Du kannst du mit keiner Leiche sprechen. Schließlich ist sie naja tod und wird dir nicht mehr antworten können.");
+                        Console.WriteLine("Du kannst du mit keiner Leiche sprechen. Schließlich ist sie naja tot und wird dir nicht mehr antworten können.");
                     else
                         Dialog(TextAdventure.Player, CurrentRoom.NPCs.Find(x =>  x.Name.ToLower() == npc));
                 else if (CurrentRoom.Inventory.Find(x =>  x.Name.ToLower() == npc) != null)

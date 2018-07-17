@@ -50,7 +50,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
              if (opponent.Health == 0)
                 {
                     Console.WriteLine("Du hast ihn besiegt. Herzlichen Glückwunsch! Du kannst in jetzt looten.");
-                    opponent.Description += " " + " Oh stimmt ja und du hast ihn umgebracht.";
+                    opponent.Description += " Oh stimmt ja und du hast ihn umgebracht.";
                     break;
                 }
 
@@ -116,7 +116,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 
         public void Dialog (Player player, NPC dialogPartner)
         {
-            if(player.Health <=0)
+            if(dialogPartner.Health <=0)
             {
                 return;
             }
@@ -127,13 +127,13 @@ namespace TextAdeventure_Die_Minen_von_Gloria
                 return;
             }
 
-            PlayerDialog playerDialog = player.Dialogs.Find(x => x.DialogPartner.Name == dialogPartner.Name);
+            PlayerDialog playerDialog = player.Dialogs.Find(dialog => dialog.DialogPartner.Name == dialogPartner.Name);
 
             Console.WriteLine("Du hast ein Gespräch mit " + dialogPartner.Name + " angefangen. Um deine Anwort auszuwählen, gib einfach die Zahl der zur Verfügung stehenden Möglichkeiten ein.");
 
             while(dialogPartner.CanSpeak)
             {
-                CharDialogLine npcLine = dialogPartner.DialogLines.Find(x => x.DialogPhase == playerDialog.DialogPhase);
+                CharDialogLine npcLine = dialogPartner.DialogLines.Find(line => line.DialogPhase == playerDialog.DialogPhase);
                 Console.WriteLine(Environment.NewLine + dialogPartner.Name + ": " + npcLine.Line);
 
                 if (npcLine.Reward != null && dialogPartner.Inventory.Contains(npcLine.Reward))
@@ -160,7 +160,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
                 }
                 else if (Int32.TryParse(command, out commandNumber))
                 {
-                    PlayerDialogLine playerDialogLine = playerDialog.DialogLines.Find(x => x.LineNumber == commandNumber && x.DialogPhase == playerDialog.DialogPhase);
+                    PlayerDialogLine playerDialogLine = playerDialog.DialogLines.Find(line => line.LineNumber == commandNumber && line.DialogPhase == playerDialog.DialogPhase);
                     if(playerDialogLine == null)
                         Console.WriteLine("Bitte wähle eine Zahl aus, die einer Antwortzeile entspricht.");
                     else
