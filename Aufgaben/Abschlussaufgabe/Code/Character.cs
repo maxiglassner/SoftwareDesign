@@ -50,7 +50,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
              if (opponent.Health == 0)
                 {
                     Console.WriteLine("Du hast ihn besiegt. Herzlichen Glückwunsch! Du kannst in jetzt looten.");
-                    opponent.Description += " " + " Oh stimmt ja und du hast ihn umgebracht.";
+                    opponent.Description += " Oh stimmt ja und du hast ihn umgebracht.";
                     break;
                 }
 
@@ -127,7 +127,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
                 return;
             }
 
-            PlayerDialog playerDialog = player.Dialogs.Find(x => x.DialogPartner.Name == dialogPartner.Name);
+            PlayerDialog playerDialog = player.Dialogs.Find(dialog => dialog.DialogPartner.Name == dialogPartner.Name);
 
             Console.WriteLine("Du hast ein Gespräch mit " + dialogPartner.Name + " angefangen. Um deine Anwort auszuwählen, gib einfach die Zahl der zur Verfügung stehenden Möglichkeiten ein.");
 
