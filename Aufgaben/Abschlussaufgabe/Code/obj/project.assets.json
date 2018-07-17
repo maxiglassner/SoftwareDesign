@@ -665,27 +665,32 @@
   },
   "packageFolders": {
     "C:\\Users\\maxxg\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Hochschule\\GitHubFiles\\SoftwareDesign\\Aufgaben\\Abschlussaufgabe\\Code\\Code.csproj",
+      "projectUniqueName": "d:\\HFU\\Dateien\\SoftwareDesign\\Aufgaben\\Abschlussaufgabe\\Code\\Code.csproj",
       "projectName": "Code",
-      "projectPath": "G:\\Hochschule\\GitHubFiles\\SoftwareDesign\\Aufgaben\\Abschlussaufgabe\\Code\\Code.csproj",
+      "projectPath": "d:\\HFU\\Dateien\\SoftwareDesign\\Aufgaben\\Abschlussaufgabe\\Code\\Code.csproj",
       "packagesPath": "C:\\Users\\maxxg\\.nuget\\packages\\",
-      "outputPath": "G:\\Hochschule\\GitHubFiles\\SoftwareDesign\\Aufgaben\\Abschlussaufgabe\\Code\\obj\\",
+      "outputPath": "d:\\HFU\\Dateien\\SoftwareDesign\\Aufgaben\\Abschlussaufgabe\\Code\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\maxxg\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\maxxg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
