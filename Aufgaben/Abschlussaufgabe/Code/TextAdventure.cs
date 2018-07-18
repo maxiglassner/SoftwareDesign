@@ -13,7 +13,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
       public static Room WinningRoom;        
         static void Main(string[] args)
         {
-             {
+             
             LoadGameData();
             Console.WriteLine(Environment.NewLine + "Die Geheimnisse von Gloria!" + Environment.NewLine);
             Console.WriteLine("Du hast dich durch tiefe Täler bis hin zum höchtsen Gipfel durchgeschlagen. Du bist müde und ausgelaugt und weißt nicht wohin mit dir.");
@@ -111,7 +111,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             }
         }
             
-        }
+        
 
         private static void LoadGameData ()
         {
