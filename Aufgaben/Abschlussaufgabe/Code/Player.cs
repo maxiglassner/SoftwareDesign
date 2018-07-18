@@ -6,7 +6,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
 {
     class Player: Character
     {
-        private int MaxHealth;        
+        private int _maxHealth;        
         public List<PlayerDialog> Dialogs = new List<PlayerDialog>();
         public Room CurrentRoom;
         public Weapon CurrentWeapon;
@@ -15,8 +15,8 @@ namespace TextAdeventure_Die_Minen_von_Gloria
         {
             Name = name;
             Description = description;
-            MaxHealth = maxHealth;
-            Health = MaxHealth;
+            _maxHealth = maxHealth;
+            Health = _maxHealth;
             Damage = damage;
             CurrentRoom = currentRoom;
         }
@@ -143,7 +143,7 @@ namespace TextAdeventure_Die_Minen_von_Gloria
             Console.WriteLine(Name);
             Console.WriteLine(Description);
             Console.WriteLine("Deine aktuellen Werte:");
-            Console.WriteLine("Gesundheit: " + Health + " / " + MaxHealth );
+            Console.WriteLine("Gesundheit: " + Health + " / " + _maxHealth );
             Console.WriteLine("Angriffsstärke: " + Damage);
             if(CurrentWeapon != null)
             {
@@ -258,8 +258,8 @@ namespace TextAdeventure_Die_Minen_von_Gloria
                     {
                         Potion potion = (Potion) inventoryItem;
                         Health += potion.HealthRecover;
-                        if(Health >= MaxHealth)
-                            Health = MaxHealth;
+                        if(Health >= _maxHealth)
+                            Health = _maxHealth;
                         Inventory.Remove(potion);
                         Console.WriteLine("Du hast ein " + potion.Name  + " getrunken. Deine Lebenspunkte betragen jetzt " + Health + " .");
                     } 
